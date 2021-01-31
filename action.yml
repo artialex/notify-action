@@ -1,0 +1,13 @@
+name: 'Notify'
+description: 'Sends a notification'
+inputs:
+  integromat_key:
+    description: 'Integromat key'
+    required: true
+  status:
+    description: 'Status'
+    required: true
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+

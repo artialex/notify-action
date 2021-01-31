@@ -1,0 +1,27 @@
+{
+  "name": "notify-action",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "ncc build action.js --license licenses.txt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com//alextheartisan/notify-action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "prettier": "@alextheartisan/prettier-config",
+  "dependencies": {
+    "@actions/core": "1.2.6",
+    "@actions/github": "4.0.0",
+    "axios": "^0.21.1",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "@alextheartisan/prettier-config": "2.0.0",
+    "@vercel/ncc": "^0.27.0"
+  }
+}
