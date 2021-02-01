@@ -9,11 +9,6 @@ const core = __nccwpck_require__(2186)
 const github = __nccwpck_require__(5438)
 const axios = __nccwpck_require__(6545)
 
-let map = {
-  success: { emoji: '✓', text: 'Success' },
-  failure: { emoji: '✗', text: 'Failure' },
-}
-
 async function run() {
   try {
     let INTEGROMAT_URL = 'https://hook.integromat.com/'
@@ -24,7 +19,7 @@ async function run() {
     }
 
     let message = ''
-    message += `${map[STATUS].emoji} ${map[STATUS].text} \n`
+    message += `${STATUS} \n`
     message += github.context.payload.repository.url
 
     await axios.post(INTEGROMAT_URL + INTEGROMAT_KEY, { message }, { headers })
