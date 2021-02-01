@@ -2,11 +2,6 @@ const core = require('@actions/core')
 const github = require('@actions/github')
 const axios = require('axios')
 
-let map = {
-  success: { emoji: '✓', text: 'Success' },
-  failure: { emoji: '✗', text: 'Failure' },
-}
-
 async function run() {
   try {
     let INTEGROMAT_URL = 'https://hook.integromat.com/'
@@ -17,7 +12,7 @@ async function run() {
     }
 
     let message = ''
-    message += `${map[STATUS].emoji} ${map[STATUS].text} \n`
+    message += `${STATUS} \n`
     message += github.context.payload.repository.url
 
     await axios.post(INTEGROMAT_URL + INTEGROMAT_KEY, { message }, { headers })
