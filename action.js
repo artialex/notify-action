@@ -15,6 +15,8 @@ async function run() {
     message += `${STATUS} \n`
     message += github.context.payload.repository.url
 
+    console.log('action :: 18', INTEGROMAT_KEY)
+
     await axios.post(INTEGROMAT_URL + INTEGROMAT_KEY, { message }, { headers })
   } catch (error) {
     core.setFailed(error.message)
