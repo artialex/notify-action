@@ -24,7 +24,9 @@ async function run() {
 
     console.log('action :: 18', INTEGROMAT_KEY)
 
-    await axios.post(INTEGROMAT_URL + INTEGROMAT_KEY, { message }, { headers })
+    let data = await axios.post(INTEGROMAT_URL + INTEGROMAT_KEY, { message }, { headers })
+
+    console.log('action :: 22', data)
   } catch (error) {
     core.setFailed(error.message)
   }
